@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Editar Usuário</h1>
+    
+    <form method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ usuario.nome }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ usuario.email }}" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" name="telefone" value="{{ usuario.telefone }}" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}
